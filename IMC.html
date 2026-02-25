@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo IMC</title>
+    <link rel="stylesheet" href="IMC.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Cálculo de IMC</h1>
+            <p>Seja bem-vindo ao site de cálculo de IMC.</p>
+        </header>
+    </div>
+
+    <div class="formulario">
+        <label for="Peso">Peso (Kg):</label>
+        <input type="number" id="Peso" step="0.01">
+
+        <label for="Altura">Altura (M):</label>
+        <input type="number" id="Altura" step="0.01">
+
+        <button onclick="calcularIMC()">Calcular</button>
+        <button onclick="limparCampos()">Limpar</button>
+    </div>
+
+    <div class="resultado">
+        <p id="resultadoIMC"></p>
+        <p id="classificacaoIMC"></p>
+    </div>
+
+
+<script src="IMC.js"></script>  
+
+</body>
+<footer>
+    <p>© 2026 - Projeto Cálculo de IMC</p>
+</footer>
+</html>
