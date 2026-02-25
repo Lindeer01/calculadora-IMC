@@ -5,28 +5,41 @@
     box-sizing: border-box;
 }
 
-/* FUNDO */
+/* FUNDO (mobile safe) */
 html, body {
     height: 100%;
     margin: 0;
+    padding: 0;
+    background: #141e30; /* fallback */
 }
+
+/* Papel de parede fixo que cobre sempre a tela */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(135deg, #141e30, #243b55);
+}
+
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #141e30, #243b55);
 
+    /* layout */
+    min-height: 100dvh;      /* mobile moderno */
+    min-height: 100vh;       /* fallback */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    min-height: 100vh;
-    flex-direction: column;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    /* evita “faixa branca” ao puxar */
+    overscroll-behavior: none;
 }
 
 /* CARD PRINCIPAL */
 .container {
-    margin-top: 50px;
+    margin-top: 0;
     width: 350px;
     
     padding: 10px;
@@ -179,16 +192,10 @@ button:hover {
 
 /*FOOTER*/
 footer {
-    margin-top: 140px;
+    margin-top: 25px;
     text-align: center;
     font-size: 14px;
     color: #f1f1f1;
     text-shadow: 
         0 1px 2px rgba(0,0,0,0.4);
-}
-    font-size: 14px;
-    color: #f1f1f1;
-    text-shadow: 
-        0 1px 2px rgba(0,0,0,0.4);
-
 }
